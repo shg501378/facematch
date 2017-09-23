@@ -14,7 +14,7 @@ $(document).ready(function () {
             if (rnd === 0) {
                 rnd = 1;
             }
-        }while(previousPhoto1==data[rnd])
+        }while(previousPhoto1==data[rnd] && previousPhoto2==data[rnd])
         do{
             do{
             var rnd2 = Math.floor(Math.random() * data.length)+1;
@@ -22,7 +22,7 @@ $(document).ready(function () {
                 rnd2 = 1;
             }
         }while(rnd==rnd2)
-    }while(previousPhoto2==data[rnd2])
+    }while(previousPhoto1==data[rnd2] && previousPhoto2==data[rnd2])
     previousPhoto1 = data[rnd];
     previousPhoto2 = data[rnd2];
         console.log(data[rnd]);
@@ -38,7 +38,7 @@ $(document).ready(function () {
             if (rnd === 0) {
                 rnd = 1;
             }
-        }while(previousPhoto1==data[rnd])
+        }while(previousPhoto1==data[rnd] && previousPhoto2==data[rnd])
         do{
             do{
             var rnd2 = Math.floor(Math.random() * data.length)+1;
@@ -46,7 +46,7 @@ $(document).ready(function () {
                 rnd2 = 1;
             }
         }while(rnd==rnd2)
-    }while(previousPhoto2==data[rnd2])
+    }while(previousPhoto1==data[rnd2] && previousPhoto2==data[rnd2])
     previousPhoto1 = data[rnd];
     previousPhoto2 = data[rnd2];
         console.log(data[rnd]);
