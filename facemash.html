@@ -1,57 +1,7 @@
 <link rel="stylesheet" type="text/css" href="facemash.css" />
-<!-- <script>
-     /*  $(document).ready(function() {}
-	$.ajax({
-		type: 'POST',url: 'localhost',success: function(data) {
-			var c = data;
-			}) */
 
-    /* var expectation1= (1.0 / (1.0 + pow(10, ((rating2 - rating1) / 400))));
-    var expectation2= (1.0 / (1.0 + pow(10, ((rating1 - rating2) / 400))));
-    var k=24;
-    document.getElementById("img1").addEventListener("click", function(){
-        rating1 = rating1 + k*(1-expectation1);
-        rating2 = rating2 + k*(0-expectation2);
-        //store the rating1 and rating2 to their corresponding photos
-        //refresh page
-    });
-    document.getElementById("img2").addEventListener("click", function(){
-        rating2 = rating2 + k*(1-expectation2);
-        rating1 = rating1 + k*(0-expectation1);
-        //store the rating1 and rating2 to their corresponding photos
-        //refresh page
-    }); */
-    
-</script> -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
-<!--<script>
-	$(document).ready(function () {
-		var data;
-		$.post("http://localhost:8080/data/", function(dataa) {
-			data = dataa;
-		});
-
-		function randomImg1() {
-		var rnd = Math.floor(Math.random() * data.length);
-		if (rnd == 0) {
-			rnd = 1;
-		}
-		var html_code = '<img class=\"who\" src=\"' + data[rnd] + '\"' + 'onclick=\"randomImg1()\" />';
-		document.getElementById("one").innerHTML = html_code;
-		var rnd2;
-		do {
-			rnd2 = Math.floor(Math.random() * data.length) + 1;
-			if (rnd2 == 4) {
-				rnd2 = 3;
-			}
-		}
-		while (rnd == rnd2);
-		var html_code2 = '<img class=\"who\" src=\"' + data[rnd2] + '\"' + 'onclick=\"randomImg1()\" />';
-		document.getElementById("two").innerHTML = html_code2;
-	}
-	})	
-</script> -->
 
 <script src="script.js"></script>
 <div id="header">

@@ -15,13 +15,10 @@ $(document).ready(function () {
         $('#onee').html(htmlCode);
     });
     $("#twoo").click(function () {
-        var one = $()
-        do {
-            var rnd = Math.floor(Math.random() * data.length) + 1;
-            if (rnd === 4) {
-                rnd = 3;
-            }
-        } while()
+        var rnd = Math.floor(Math.random() * data.length) + 1;
+        if (rnd === 4) {
+            rnd = 3;
+        }
         var htmlCode = '<img id="two" class=\"who\" src=\"' + data[rnd] + '\" />';
         console.log(data[rnd]);
         $("#twoo").html(htmlCode);
