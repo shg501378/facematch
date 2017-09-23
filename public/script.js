@@ -22,5 +22,17 @@ $(document).ready(function () {
         var htmlCode = '<img id="two" class=\"who\" src=\"' + data[rnd] + '\" />';
         console.log(data[rnd]);
         $("#twoo").html(htmlCode);
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/rate/",
+            contentType: 'application/json',
+            data: JSON.stringify({
+                id: 222
+            }),
+            success: function(r) {
+                console.log('yo')
+            }
+        })
     })
 })
