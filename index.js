@@ -17,7 +17,7 @@ app.post('/data', function(req, res) {
     var filename = [];
     fs.readdir('./screenshots/', (err, files) => {
         files.forEach(file => {
-            console.log(filename.push(path.basename(file)));
+            filename.push(path.basename(file));
            // console.log(file)
         })
         res.send(filename);
