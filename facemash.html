@@ -1,5 +1,4 @@
-
-<link rel = "stylesheet" type = "text/css" href = "facemash.css" />
+<link rel="stylesheet" type="text/css" href="facemash.css" />
 <!-- <script>
      /*  $(document).ready(function() {}
 	$.ajax({
@@ -24,33 +23,37 @@
     }); */
     
 </script> -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
 <script>
-	$.ajax({
-		type: 'POST',url: 'localhost:8080/data',success: function(data) {
-			var c = data;
-			}});
-    function randomImg1() {
-      var myImages1 = new Array (); 
-      myImages1[1] = "screenshots/2014A1PS356H.png";
-      myImages1[2] = "screenshots/2014A1PS508H.png";
-      myImages1[3] = "screenshots/2014A1PS609H.png";
-      var rnd = Math.floor( Math.random() * myImages1.length );
-      if( rnd == 0 ) {
-        rnd =1;
-      }
-      var html_code = '<img class=\"who\" src=\"' + myImages1[rnd] + '\"' + 'onclick=\"randomImg1()\" />';
-	  document.getElementById("one").innerHTML=html_code;
-	  var rnd2;
-	  do{
-	  rnd2 = Math.floor( Math.random() * myImages1.length ) + 1;
-	  if(rnd2 == 4) {
-		  rnd2=3;
+	$(document).ready(function () {
+		$.post("http://localhost:8080/data/", function(data) {
+			console.log(data);
+		})
+	})
+
+	function randomImg1() {
+		var myImages1 = new Array();
+		myImages1[1] = "2014A1PS356H.png";
+		myImages1[2] = "2014A1PS508H.png";
+		myImages1[3] = "2014A1PS609H.png";
+		var rnd = Math.floor(Math.random() * myImages1.length);
+		if (rnd == 0) {
+			rnd = 1;
 		}
-	  }
-	  while(rnd==rnd2);
-      var html_code2 = '<img class=\"who\" src=\"' + myImages1[rnd2] + '\"' + 'onclick=\"randomImg1()\" />';
-      document.getElementById("two").innerHTML=html_code2;
-    }
+		var html_code = '<img class=\"who\" src=\"' + myImages1[rnd] + '\"' + 'onclick=\"randomImg1()\" />';
+		document.getElementById("one").innerHTML = html_code;
+		var rnd2;
+		do {
+			rnd2 = Math.floor(Math.random() * myImages1.length) + 1;
+			if (rnd2 == 4) {
+				rnd2 = 3;
+			}
+		}
+		while (rnd == rnd2);
+		var html_code2 = '<img class=\"who\" src=\"' + myImages1[rnd2] + '\"' + 'onclick=\"randomImg1()\" />';
+		document.getElementById("two").innerHTML = html_code2;
+	}
 </script>
 <div id="header">
 	<h1><a href="index.html">FACEMASH</a></h1>
@@ -60,9 +63,9 @@
 	<h2>Who's Hotter? Click to Choose.</h2>
 	<table>
 		<tr>
-			<td id="one"><img class="who" src="screenshots/2014A1PS356H.png" onclick="randomImg1()" /> </td>
+			<td id="one"><img class="who" src="2014A1PS356H.png" onclick="randomImg1()" /> </td>
 			<td>OR</td>
-			<td id="two"><img class="who" src="screenshots/2014A1PS508H.png" onclick="randomImg1()" /></td>
+			<td id="two"><img class="who" src="2014A1PS508H.png" onclick="randomImg1()" /></td>
 		</tr>
 	</table>
 </div>
