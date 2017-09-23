@@ -1,0 +1,80 @@
+
+<link rel = "stylesheet" type = "text/css" href = "facemash.css" />
+<!-- <script>
+     /*  $(document).ready(function() {}
+	$.ajax({
+		type: 'POST',url: 'localhost',success: function(data) {
+			var c = data;
+			}) */
+
+    /* var expectation1= (1.0 / (1.0 + pow(10, ((rating2 - rating1) / 400))));
+    var expectation2= (1.0 / (1.0 + pow(10, ((rating1 - rating2) / 400))));
+    var k=24;
+    document.getElementById("img1").addEventListener("click", function(){
+        rating1 = rating1 + k*(1-expectation1);
+        rating2 = rating2 + k*(0-expectation2);
+        //store the rating1 and rating2 to their corresponding photos
+        //refresh page
+    });
+    document.getElementById("img2").addEventListener("click", function(){
+        rating2 = rating2 + k*(1-expectation2);
+        rating1 = rating1 + k*(0-expectation1);
+        //store the rating1 and rating2 to their corresponding photos
+        //refresh page
+    }); */
+    
+</script> -->
+<script>
+	$.ajax({
+		type: 'POST',url: 'localhost:8080/data',success: function(data) {
+			var c = data;
+			}});
+    function randomImg1() {
+      var myImages1 = new Array (); 
+      myImages1[1] = "screenshots/2014A1PS356H.png";
+      myImages1[2] = "screenshots/2014A1PS508H.png";
+      myImages1[3] = "screenshots/2014A1PS609H.png";
+      var rnd = Math.floor( Math.random() * myImages1.length );
+      if( rnd == 0 ) {
+        rnd =1;
+      }
+      var html_code = '<img class=\"who\" src=\"' + myImages1[rnd] + '\"' + 'onclick=\"randomImg1()\" />';
+	  document.getElementById("one").innerHTML=html_code;
+	  var rnd2;
+	  do{
+	  rnd2 = Math.floor( Math.random() * myImages1.length ) + 1;
+	  if(rnd2 == 4) {
+		  rnd2=3;
+		}
+	  }
+	  while(rnd==rnd2);
+      var html_code2 = '<img class=\"who\" src=\"' + myImages1[rnd2] + '\"' + 'onclick=\"randomImg1()\" />';
+      document.getElementById("two").innerHTML=html_code2;
+    }
+</script>
+<div id="header">
+	<h1><a href="index.html">FACEMASH</a></h1>
+</div>
+<div id="main">
+	<h3>Were we let in for our looks? No. Will we be judged on them? Yes.</h3>
+	<h2>Who's Hotter? Click to Choose.</h2>
+	<table>
+		<tr>
+			<td id="one"><img class="who" src="screenshots/2014A1PS356H.png" onclick="randomImg1()" /> </td>
+			<td>OR</td>
+			<td id="two"><img class="who" src="screenshots/2014A1PS508H.png" onclick="randomImg1()" /></td>
+		</tr>
+	</table>
+</div>
+<div id="footer">
+	<!-- <a href="#">TURKEY</a>
+	<a href="#">GERMANY</a>
+	<a href="#">ITALY</a>
+	<a href="#">RUSSIA</a>
+	<a href="#">RANDOM</a> -->
+	<br />
+	<a href="index.html">Home</a>
+	<a href="about.html">About</a>
+	<a href="submit.html">Submit</a>
+	<a href="rankings.html">Rankings</a>
+</div>
